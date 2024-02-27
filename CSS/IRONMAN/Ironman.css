@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 50px; /* Adjust the width of the logo as needed */
+        margin-right: 10px; /* Adjust the spacing between the logo and text as needed */
+    }
+
+    h1{
+        text-align: center;
+        letter-spacing: 2px;
+        font-family: "Comic Sans MS",serif;
+        font-size: 55px;
+        font-weight: 900;
+        line-height: 1.5;
+        text-transform: uppercase;
+
+        background: linear-gradient(to right, #CC0000 67%, #D3AF37 33%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+}
+
+h3{
+    text-align: start;
+    text-decoration: double line-through;
+
+}
+
+p{
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+h2{
+    font-weight: 800;
+
+}
