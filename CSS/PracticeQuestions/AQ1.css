@@ -1,0 +1,27 @@
+body{
+    background-color: wheat;
+    text-align: center;
+    font-family: Georgia,serif;
+
+}
+
+p{
+    color: darkred;
+    line-height: 30px;
+}
+a{
+    color: #e87fae;
+    text-decoration: none;
+}
+button{
+    color: blueviolet;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: white;
+}
+textarea{
+    color: #000;
+}
+span {
+    text-decoration: underline;
+}
