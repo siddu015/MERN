@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: red;
+
+
+}
+
+h3{
+    text-align: start;
+    text-decoration: line-through;
+
+}
+
+p{
+    text-align: justify;
+    font-weight: 400;
+}
+
+h2{
+    font-weight: 800;
+
+}
