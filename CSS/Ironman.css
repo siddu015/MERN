@@ -1,6 +1,7 @@
 h1{
     text-align: center;
-    text-decoration: wavy red underline;
+    text-decoration: #000 underline;
+    letter-spacing: 2px;
 }
 
 h3{
