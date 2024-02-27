@@ -1,20 +1,18 @@
 h1{
     text-align: center;
-    text-decoration: underline;
-    text-decoration-color: red;
-
-
+    text-decoration: wavy red underline;
 }
 
 h3{
     text-align: start;
-    text-decoration: line-through;
+    text-decoration: double line-through;
 
 }
 
 p{
     text-align: justify;
     font-weight: 400;
+    line-height: 1.5;
 }
 
 h2{
