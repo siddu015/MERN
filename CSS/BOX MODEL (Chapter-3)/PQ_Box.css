@@ -1,0 +1,28 @@
+#outer {
+    height: 200px;
+    width: 70px;
+    border: 2px solid black;
+    background-color: lightgrey;
+}
+
+#outer div {
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 8px;
+    border-radius: 100%;
+}
+
+#first {
+    background-color: RED;
+}
+
+#second {
+    background-color: Yellow;
+}
+
+#third {
+    background-color: green;
+}
+
+
