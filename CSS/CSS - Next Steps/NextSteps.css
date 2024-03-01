@@ -1,10 +1,12 @@
 div {
-    height: 100px;
-    width: 100px;
+    height: 535px;
+    width: 300px;
     background-color: rgba(255,0,0);
     margin: 10px auto 0;
-    /*transition: margin-top 2s ease-in 0.2s;*/
-
+    transition: margin-top 2s ease-in 0.2s;
+    box-shadow: 1px 1px 50px black;
+    background-image: url("IronMan.jpeg") ;
+    background-size: contain;
 }
 
 div:active {
