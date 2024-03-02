@@ -7,7 +7,7 @@
     border-radius: 5px;
     vertical-align: top;
     box-shadow: 2px 2px 20px black;
-    transition: transform 0.6s ease;
+    transition: transform 2s ease;
     margin: auto;
 }
 
@@ -33,7 +33,7 @@ body {
     display: flex;
     height: 100vh;
     margin: 0;
-    padding: 10px; /* Add padding to create space around the cards */
-    box-sizing: content-box; /* Include padding and border in the element's total width and height */
+    padding: 10px;
+    box-sizing: content-box;
     background-color: #f0f0f0;
 }
