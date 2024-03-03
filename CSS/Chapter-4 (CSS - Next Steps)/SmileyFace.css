@@ -6,8 +6,11 @@
     background-color: #ecbf4e;
     border-radius: 50%;
     box-shadow:  2px 2px 25px black;
-    border: 2px solid black;
     transition: transform 0.6s ease;
+
+    position: fixed;
+    top: 30%;
+    left: 40%;
 
 }
 
@@ -55,6 +58,6 @@
 
 body {
     height: 100vh;
-    background-color: #574f4f;
+    background-color: #858585;
     display: flex;
 }
