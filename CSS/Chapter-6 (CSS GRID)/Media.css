@@ -1,0 +1,45 @@
+h1 {
+    background-color: #84dbf3;
+    border: 2px solid black;
+}
+
+@media (width: 300px) {
+    h1{
+        background-color: #574f4f;
+        color: rgb(255, 255, 255);
+    }
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: #ffb5d1;
+    }
+}
+
+@media  (min-width: 400px) {
+    h1{
+        background-color: #ecbf4e;
+        color: rgba(0, 0, 0, 0.62);
+    }
+    div {
+        height: 100px;
+        width: 300px;
+        background-color: wheat;
+    }
+}
+
+@media (max-width: 200px)   {
+    h1{
+        background-color: #d70e0e;
+        color: rgb(255, 255, 255);
+    }
+
+}
+
+@media (min-width: 350px)  and (max-width: 500px) {
+    h1{
+        background-color: #004c59;
+        color: rgb(255, 255, 255);
+    }
+
+}
+

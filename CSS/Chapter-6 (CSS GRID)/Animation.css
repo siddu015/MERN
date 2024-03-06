@@ -1,0 +1,71 @@
+.box {
+    height: 100px;
+    width: 300px;
+    background-color: lightpink;
+    /*animation-name: widthAnimate;*/
+    /*animation-duration: 1s;*/
+    /*animation-timing-function: ease-in;*/
+    /*animation-delay: 0s;*/
+    /*animation-iteration-count: 10000;*/
+    /*animation-direction: alternate;*/
+
+    animation: fontAnimateWithPercentage 3s ease-in 0s infinite alternate;
+}
+
+@keyframes fontAnimation {
+    from {
+        font-size: 20px;
+    }
+    to  {
+        font-size: 40px;
+    }
+}
+
+@keyframes fontAnimateWithPercentage {
+    0% {
+        font-size: 20px;
+    }
+    25% {
+        font-size: 30px;
+    }
+    50% {
+        font-size: 35px;
+    }
+    75% {
+        font-size: 38px;
+    }
+    100% {
+        font-size: 50px;
+    }
+
+}
+
+@keyframes colourAnimate {
+    from {
+        background-color: #ffb5d1;
+    }
+    to  {
+        background-color: #84dbf3;
+    }
+}
+@keyframes widthAnimate {
+    from {
+        width: 300px;
+    }
+    to  {
+        width: 1000px;
+    }
+}
+@keyframes MultiAnimate {
+    from {
+        width: 150px;
+        background-color: #ffb5d1;
+        font-size: 20px;
+    }
+    to  {
+        width: 1000px;
+        background-color: #84dbf3;
+        font-size: 40px;
+    }
+}
+
