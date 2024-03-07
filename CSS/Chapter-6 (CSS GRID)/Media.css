@@ -32,7 +32,6 @@ h1 {
         background-color: #d70e0e;
         color: rgb(255, 255, 255);
     }
-
 }
 
 @media (min-width: 350px)  and (max-width: 500px) {
@@ -40,6 +39,11 @@ h1 {
         background-color: #004c59;
         color: rgb(255, 255, 255);
     }
-
 }
 
+@media (orientation: landscape) {
+    h1{
+        background-color: #2db429;
+        color: rgba(0, 0, 0, 0.62);
+    }
+}
