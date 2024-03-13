@@ -31,13 +31,47 @@
     <div class="container">
       <h2>Form Demo</h2>
       <form class="mb-3">
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="text" class="form-control" placeholder="Email" id="email">
+
+        <div class="row">
+          <div class="mb-3 col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" placeholder="Email" id="email">
+          </div>
+
+          <div class="mb-3 col-md-6">
+            <label for="pass" class="form-label">Password</label>
+            <input type="text" class="form-control" placeholder="Password" id="pass">
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="pass" class="form-label">Password</label>
-          <input type="text" class="form-control" placeholder="Password" id="pass">
+
+        <div>
+          <select class="form-select">
+            <option selected>Select your City</option>
+            <option value="1">Hyderabad</option>
+            <option value="2">Bangalore</option>
+            <option value="3">Visakhapatnam</option>
+          </select>
+        </div>
+
+        <br>
+        <div class="normal mb-3">
+          <label for="agree">Agree</label>
+          <input type="checkbox" id="agree">
+        </div>
+
+        <div class="mb-3 form-check">
+          <label class="form-check-label" for="agreeBS">Agree</label>
+          <input class="form-check-input" type="checkbox" id="agreeBS">
+        </div>
+
+        <div class="mb-3 form-check">
+          <label class="form-check-label" for="radio">Yes/No</label>
+          <input class="form-check-input" type="radio" id="radio">
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
         </div>
       </form>
     </div>
