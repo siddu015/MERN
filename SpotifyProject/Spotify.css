@@ -12,10 +12,12 @@ body {
     padding: 0.5rem;
 }
 
+
 .sidebar {
-    background-color: #ffb5d1;
+    background-color: #000;
     width: 340px;
     border-radius: 1rem; /*16px*/
+    margin: 0.25rem 0.5rem 0.25rem 0;
 }
 
 .main-content {
@@ -54,6 +56,9 @@ a{
     line-height: 40px;
     opacity: 0.7;
     padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
 }
 
 .nav-option:hover {
@@ -93,21 +98,32 @@ a{
 .icons {
     font-size: 1.25rem;
     display: flex;
+    cursor: pointer;
 }
 
-.icons i {
-    opacity: 0.7;
-    margin-right: 1rem;
+.icons .a,
+.icons .b {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
 }
 
-.icons:hover {
+.icons .a:hover,
+.icons .b:hover {
     opacity: 1;
+    background-color:  #8080803D;
+    border-radius: 100%;
 }
+
 
 .categories {
     display: flex;
     height: 3rem;
-    justify-content: flex-start;
     align-items: center;
 }
 
@@ -128,16 +144,16 @@ a{
 }
 
 .categories-content {
-    height: 100%;
-    overflow: scroll;
+    height: calc(100% - 19rem);
+    overflow-y: auto;
 }
 
 .categories-icons {
     display: flex;
     height: 2.1rem;
-    padding: 0.25rem 0.25rem 0 0.5rem;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .categories-icons i {
@@ -146,9 +162,75 @@ a{
 }
 
 .categories-icons .search-icon {
-    padding: 0.25rem 0.75rem 0 1rem;
+    padding: 0.25rem;
 }
 
 .categories-icons .recents {
     padding: 0.25rem 0.75rem 0 1rem;
 }
+
+.categories-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.categories-cards .card {
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out; /* Smooth transition on hover */
+    cursor: pointer;
+}
+
+.categories-cards .card:hover {
+    background-color: rgba(128, 128, 128, 0.24); /* Light grey color on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+
+.card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.75rem;
+}
+
+.card-playlist .card-content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.card .card-content h5 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+
+.card .card-content p {
+    font-size: 0.75rem;
+    margin: 0.25rem;
+    color: rgba(255, 255, 255, 0.76);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.card-artist .card-content img {
+    width: 100%;
+    border-radius: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.categories-content::-webkit-scrollbar {
+    width: 0.5rem; /* width of the scrollbar */
+    background-color: #121212; /* color of the scrollbar track */
+}
+.categories-content::-webkit-scrollbar-thumb {
+    background-color: #808080; /* color of the thumb */
+    border-radius: 6px; /* roundness of the thumb */
+}
+
