@@ -23,11 +23,10 @@ body {
     background: linear-gradient(to bottom, rgba(139, 0, 0, 0.6), rgba(139, 0, 0, 0.4) calc(80% - 2000px), #121212 calc(100% - 400px));
     flex: 1;
     border-radius: 1rem; /*16px*/
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 0.5rem 1rem 0 1rem;
+    overflow-y: auto;
 }
 
 .music-player {
@@ -187,13 +186,13 @@ a{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
-.categories-cards .card {
+.card {
     border-radius: 5px;
     transition: all 0.3s ease-in-out; /* Smooth transition on hover */
     cursor: pointer;
     position: relative;
 }
-.categories-cards .card:hover {
+.card:hover {
     background-color: rgba(128, 128, 128, 0.24); /* Light grey color on hover */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -215,15 +214,17 @@ a{
     margin-bottom: 0.5rem;
 }
 .card .card-content h5 {
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin: 0.25rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
 }
-.card .card-content p {
+.categories-cards .card .card-content h5 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0.25rem;
+}
+.categories-cards .card .card-content p {
     font-size: 0.75rem;
     margin: 0.25rem;
     color: rgba(255, 255, 255, 0.76);
@@ -265,7 +266,7 @@ a{
     z-index: 2;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0.25rem;
+    padding: 1rem 1rem;
     align-items: center;
 }
 .sticky-nav .btn button {
@@ -321,15 +322,19 @@ a{
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 0.5rem;
+    padding: 0 1rem;
 }
 .sticky-categories .btn {
     margin-right: 0.25rem;
 }
-.sticky-categories .a {
-    margin-left: 0.25rem;
-}
 
-/*2.Rectangle Cards*/
+
+
+/*Home*/
+.main-home {
+   padding: 0 1rem;
+}
+/*Rectangle Cards*/
 .rectangle-cards {
     width: 100%;
     height: auto;
@@ -337,14 +342,13 @@ a{
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, minmax(150px, 1fr));
     grid-gap: 0.5rem;
-    padding: 0.25rem;
+    margin-bottom: 2rem;
 }
 .rectangle-cards .rect-card {
     height: 48px;
     display: flex;
     align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-radius: 5px;
     background-color: rgba(128, 128, 128, 0.13);
     backdrop-filter: blur(5px);
     transition: all 0.1s; /* Smooth transition on hover */
@@ -390,8 +394,56 @@ a{
     height: 2rem;
 }
 
+/*Home*/
+.madeFor {
+    height: auto;
+}
+.home-navs {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.home-navs h2:hover,
+.home-navs h5:hover{
+    text-decoration: underline;
+}
+.home-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 0.5rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
 
-
-
-
-
+}
+.home-cards .card .card-content h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.home-cards .card .card-content p {
+    font-size: 0.75rem;
+    margin: 0.25rem;
+    color: rgba(255, 255, 255, 0.76);
+    width: 100%;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+.home-cards .card .play-button {
+    top: 48.5%;
+    left: 77.5%;
+    width: 3rem;
+    height: 3rem;
+}
