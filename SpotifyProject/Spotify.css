@@ -12,20 +12,22 @@ body {
     padding: 0.5rem;
 }
 
-
 .sidebar {
     background-color: #000;
-    width: 340px;
+    flex: 0 0 340px;
     border-radius: 1rem; /*16px*/
-    margin: 0.25rem 0.5rem 0.25rem 0;
+    margin: 0.25rem 0.5rem 0 0.25rem;
 }
 
 .main-content {
-    background-color: #121212;
+    background: linear-gradient(to bottom, rgba(139, 0, 0, 0.6), rgba(139, 0, 0, 0.4) calc(80% - 2000px), #121212 calc(100% - 400px));
     flex: 1;
     border-radius: 1rem; /*16px*/
-    overflow: scroll;
+    overflow-y: auto;
     display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0.5rem 1rem 0 1rem;
 }
 
 .music-player {
@@ -41,6 +43,27 @@ a{
     text-decoration: none;
 }
 
+/*Play button settings*/
+.play-button {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background-color: #1db954;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease-in;
+}
+.play-button i {
+    font-size: 1rem;
+    padding-left: 0.15rem;
+}
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/*Side bar*/
+/*1. Navigation bar*/
 .nav {
     background-color: #121212;
     border-radius: 1rem;
@@ -51,7 +74,6 @@ a{
     padding: 0.5rem 0.75rem;
     margin-bottom: 0.5rem;
 }
-
 .nav-option {
     line-height: 40px;
     opacity: 0.7;
@@ -60,28 +82,27 @@ a{
     transition: opacity 0.3s ease;
 
 }
-
 .nav-option:hover {
     opacity: 1;
 }
-
 .nav-option i {
     font-size: 1.25rem;
 }
-
 .nav-option a {
     font-size: 1rem;
     font-weight: 500;
     margin-left: 1rem;
 }
 
+/*2.Library bar*/
 .library {
     background-color: #121212 ;
     border-radius: 1rem;
-    height: 100%;
-    padding: 0.5rem 1rem;
+    height:calc(100vh - 13rem);
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
 }
-
 .options {
     height: 2.5rem;
     display: flex;
@@ -89,18 +110,15 @@ a{
     align-items: center;
     padding: 0.75rem 0 0.25rem 0 ;
 }
-
 .lib-option img {
     height: 1.5rem;
     width: 1.5rem;
 }
-
 .icons {
     font-size: 1.25rem;
     display: flex;
     cursor: pointer;
 }
-
 .icons .a,
 .icons .b {
     height: 2rem;
@@ -112,7 +130,6 @@ a{
     opacity: 0.5;
     transition: opacity 0.3s ease;
 }
-
 .icons .a:hover,
 .icons .b:hover {
     opacity: 1;
@@ -120,13 +137,12 @@ a{
     border-radius: 100%;
 }
 
-
+/*3. Categories bar*/
 .categories {
     display: flex;
     height: 3rem;
     align-items: center;
 }
-
 .btn-icon {
     background-color: #ffffff12;
     color: #fff;
@@ -138,52 +154,49 @@ a{
     padding: 0.5rem 0.75rem;
     margin-right: 1rem;
 }
-
 .btn-icon:hover {
     background-color: #ffffff24;
 }
 
+/*4. Categories content*/
+/* Categories Content navigation*/
 .categories-content {
+    flex: 1;
     height: calc(100% - 19rem);
     overflow-y: auto;
 }
-
-.categories-icons {
+.categories-nav {
     display: flex;
     height: 2.1rem;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
 }
-
-.categories-icons i {
+.categories-nav i {
     font-size: 1rem;
     margin-left: 0.25rem ;
 }
-
-.categories-icons .search-icon {
+.categories-nav .search-icon {
     padding: 0.25rem;
 }
-
-.categories-icons .recents {
+.categories-nav .recents {
     padding: 0.25rem 0.75rem 0 1rem;
 }
-
+/* Categories Content cards*/
 .categories-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
-
 .categories-cards .card {
     border-radius: 5px;
-    transition: all 0.5s ease-in-out; /* Smooth transition on hover */
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover */
     cursor: pointer;
+    position: relative;
 }
-
 .categories-cards .card:hover {
     background-color: rgba(128, 128, 128, 0.24); /* Light grey color on hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 .card .card-content {
     display: flex;
     flex-direction: column;
@@ -191,13 +204,16 @@ a{
     align-items: center;
     margin: 0.75rem;
 }
-
 .card-playlist .card-content img {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 0.5rem;
 }
-
+.card-artist .card-content img {
+    width: 100%;
+    border-radius: 100%;
+    margin-bottom: 0.5rem;
+}
 .card .card-content h5 {
     font-size: 0.75rem;
     font-weight: 500;
@@ -207,8 +223,6 @@ a{
     white-space: nowrap;
     width: 100%;
 }
-
-
 .card .card-content p {
     font-size: 0.75rem;
     margin: 0.25rem;
@@ -218,13 +232,6 @@ a{
     white-space: nowrap;
     width: 100%;
 }
-
-.card-artist .card-content img {
-    width: 100%;
-    border-radius: 100%;
-    margin-bottom: 0.5rem;
-}
-
 .categories-content::-webkit-scrollbar {
     width: 0.5rem; /* width of the scrollbar */
     background-color: #121212; /* color of the scrollbar track */
@@ -233,4 +240,158 @@ a{
     background-color: #808080; /* color of the thumb */
     border-radius: 6px; /* roundness of the thumb */
 }
+.card:hover .play-button {
+    display: flex;
+}
+.card .play-button {
+    top: 40%;
+    left: 63%;
+    width: 2.6rem;
+    height: 2.6rem;
+ }
+
+
+
+/*Main-Content*/
+/*1. Sticky bar*/
+.sticky {
+    position: sticky;
+    max-width: 100%;
+}
+/*First sticky bar for navigation*/
+.sticky-nav {
+    top: 0;
+    height: 32px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0.25rem;
+    align-items: center;
+}
+.sticky-nav .btn button {
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+}
+.sticky-nav .nav-icons button {
+    padding: 0.5rem 0.75rem;
+    margin-right: 1rem;
+}
+.sticky-nav .nav-buttons {
+    display: flex;
+    justify-content:space-around;
+    align-content: center;
+}
+.sticky-nav .nav-buttons button {
+    margin: 0 0.5rem;
+}
+.sticky-nav .nav-buttons .a {
+    height: 32px;
+    width: 108px;
+}
+.sticky-nav .nav-buttons .a i {
+    margin-right: 0.5rem ;
+}
+.sticky-nav .nav-buttons img{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    padding: 0.25rem;
+    background-color: black;
+}
+.sticky-nav button {
+    transition: background-color 0.3s ease;
+}
+.sticky-nav button:hover {
+    background-color: #ffffff24;
+}
+/*Second sticky bar for categories*/
+.sticky-categories {
+    top: 32px;
+    height: 56px;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.sticky-categories .btn {
+    margin-right: 0.25rem;
+}
+.sticky-categories .a {
+    margin-left: 0.25rem;
+}
+
+/*2.Rectangle Cards*/
+.rectangle-cards {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-gap: 0.5rem;
+    padding: 0.25rem;
+}
+.rectangle-cards .rect-card {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.13);
+    backdrop-filter: blur(5px);
+    transition: all 0.1s; /* Smooth transition on hover */
+    position: relative;
+    cursor: pointer;
+}
+.rectangle-cards .rect-card img {
+    width: 3rem;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-right: 0.5rem;
+}
+.rectangle-cards .rect-card h5 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.5;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+.rectangle-cards .rect-card:hover {
+    background-color: rgba(128, 128, 128, 0.38);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 1210px) {
+    .rectangle-cards {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+}
+.rect-card:hover .play-button {
+    display: flex;
+}
+.rect-card .play-button {
+    top: 50%;
+    left: 90%;
+    width: 2rem;
+    height: 2rem;
+}
+
+
+
+
+
 
