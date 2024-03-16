@@ -27,6 +27,7 @@ body {
     flex-direction: column;
     position: relative;
     overflow-y: auto;
+    height:calc(100vh - 5.25rem);
 }
 
 .music-player {
@@ -52,6 +53,7 @@ a{
     justify-content: center;
     align-items: center;
     transition: transform 0.1s ease-in;
+    box-shadow:2px 2px 10px black;						;
 }
 .play-button i {
     font-size: 1rem;
@@ -220,7 +222,7 @@ a{
     width: 100%;
 }
 .categories-cards .card .card-content h5 {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 500;
     margin: 0.25rem;
 }
@@ -257,7 +259,9 @@ a{
 /*1. Sticky bar*/
 .sticky {
     position: sticky;
+    top: 0;
     max-width: 100%;
+    z-index: 100;
 }
 /*First sticky bar for navigation*/
 .sticky-nav {
@@ -329,8 +333,7 @@ a{
 }
 
 
-
-/*Home*/
+/*2. Main-Home*/
 .main-home {
    padding: 0 1rem;
 }
@@ -381,7 +384,7 @@ a{
 @media (max-width: 1210px) {
     .rectangle-cards {
         grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, minmax(160px, 1fr));
     }
 }
 .rect-card:hover .play-button {
@@ -394,9 +397,10 @@ a{
     height: 2rem;
 }
 
-/*Home*/
-.madeFor {
-    height: auto;
+/*Home-Content*/
+.home-content {
+    flex: 1;
+    margin-bottom: 2rem;
 }
 .home-navs {
     width: 100%;
@@ -404,7 +408,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     cursor: pointer;
 }
 .home-navs h2:hover,
@@ -413,7 +417,7 @@ a{
 }
 .home-cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
     gap: 0.5rem;
     margin-left: -0.75rem;
     margin-right: -0.75rem;
@@ -441,9 +445,34 @@ a{
     -webkit-line-clamp: 2; /* Limit to 2 lines */
     -webkit-box-orient: vertical;
 }
-.home-cards .card .play-button {
-    top: 48.5%;
-    left: 77.5%;
+
+.MadeFor .card .play-button {
+    top: 56%;
+    left: 78%;
+    width: 3rem;
+    height: 3rem;
+}
+.JumpBack .card .play-button {
+    top: 56.5%;
+    left:79%;
+    width: 3rem;
+    height: 3rem;
+}
+.RecentlyPlayed .card .play-button {
+    top: 60.5%;
+    left:79%;
+    width: 3rem;
+    height: 3rem;
+}
+.Throwback .card .play-button {
+    top: 56.5%;
+    left:78.5%;
+    width: 3rem;
+    height: 3rem;
+}
+.Episodes .card .play-button {
+    top: 60%;
+    left:79%;
     width: 3rem;
     height: 3rem;
 }
