@@ -121,8 +121,8 @@ a{
     display: flex;
     cursor: pointer;
 }
-.icons .a,
-.icons .b {
+.plus-icon,
+.arrow-icon{
     height: 2rem;
     width: 2rem;
     padding: 0.5rem;
@@ -132,8 +132,8 @@ a{
     opacity: 0.5;
     transition: opacity 0.3s ease;
 }
-.icons .a:hover,
-.icons .b:hover {
+.plus-icon:hover,
+.arrow-icon:hover {
     opacity: 1;
     background-color:  #8080803D;
     border-radius: 100%;
@@ -161,12 +161,12 @@ a{
 }
 
 /*4. Categories content*/
-/* Categories Content navigation*/
 .categories-content {
     flex: 1;
     height: calc(100% - 19rem);
     overflow-y: auto;
 }
+/* Categories Content navigation*/
 .categories-nav {
     display: flex;
     height: 2.1rem;
@@ -178,11 +178,14 @@ a{
     font-size: 1rem;
     margin-left: 0.25rem ;
 }
-.categories-nav .search-icon {
+.categories-search {
     padding: 0.25rem;
 }
-.categories-nav .recents {
+.categories-recents {
     padding: 0.25rem 0.75rem 0 1rem;
+}
+.categories-recents a {
+    font-size: 0.8rem;
 }
 /* Categories Content cards*/
 .categories-cards {
@@ -199,35 +202,33 @@ a{
     background-color: rgba(128, 128, 128, 0.24); /* Light grey color on hover */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.card .card-content {
+.card-content {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     margin: 0.75rem;
 }
-.card-playlist .card-content img {
+.card-playlist img {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 0.5rem;
 }
-.card-artist .card-content img {
+.card-artist img {
     width: 100%;
     border-radius: 100%;
     margin-bottom: 0.5rem;
 }
-.card .card-content h5 {
+.categories-card-content h5 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0.25rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
 }
-.categories-cards .card .card-content h5 {
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin: 0.25rem;
-}
-.categories-cards .card .card-content p {
+.categories-card-content p {
     font-size: 0.75rem;
     margin: 0.25rem;
     color: rgba(255, 255, 255, 0.76);
@@ -239,12 +240,20 @@ a{
 .card:hover .play-button {
     display: flex;
 }
-.card .play-button {
+.card-playlist .play-button {
     top: 40%;
     left: 63%;
     width: 2.6rem;
     height: 2.6rem;
 }
+.card-artist .play-button {
+    top: 40%;
+    left: 60%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/*5.Categories Content Scrollbar*/
 .categories-content::-webkit-scrollbar {
     width: 0.5rem; /* width of the scrollbar */
     background-color: #121212; /* color of the scrollbar track */
@@ -265,7 +274,7 @@ a{
 
 /*Main-Content*/
 /*1. Sticky bar*/
-.sticky {
+.sticky-bar {
     position: sticky;
     top: 0;
     max-width: 100%;
@@ -282,8 +291,8 @@ a{
     padding: 1rem 1rem;
     align-items: center;
 }
-.sticky-nav .btn button {
-    background-color: black;
+.sticky-nav button {
+    background-color: #ffffff18;
     color: white;
     border-radius: 1rem;
     border: none;
@@ -294,37 +303,40 @@ a{
     height: 2rem;
     width: 2rem;
 }
-.sticky-nav .nav-icons button {
+.nav-icon {
     padding: 0.5rem 0.75rem;
     margin-right: 1rem;
+    transition:  background-color 0.3s ease;
 }
-.sticky-nav .nav-buttons {
+.nav-icon:hover {
+    background-color: #ffffff48;
+}
+.nav-buttons {
     display: flex;
     justify-content:space-around;
     align-content: center;
 }
-.sticky-nav .nav-buttons button {
+.nav-button {
     margin: 0 0.5rem;
+    transition: transform 0.3s ease;
+
 }
-.sticky-nav .nav-buttons .a {
+.nav-buttons .a {
     height: 32px;
     width: 108px;
 }
-.sticky-nav .nav-buttons .a i {
+.nav-buttons .a i {
     margin-right: 0.5rem ;
 }
-.sticky-nav .nav-buttons img{
+.nav-buttons .c img{
     height: 2rem;
     width: 2rem;
     border-radius: 100%;
     padding: 0.25rem;
     background-color: black;
 }
-.sticky-nav button {
-    transition: background-color 0.3s ease;
-}
-.sticky-nav button:hover {
-    background-color: #ffffff24;
+.nav-button:hover {
+    transform: scale(1.1);
 }
 /*Second sticky bar for categories*/
 .sticky-categories {
@@ -334,13 +346,9 @@ a{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     padding: 0 1rem;
 }
-.sticky-categories .btn {
-    margin-right: 0.25rem;
-}
-
 
 /*2. Main-Home*/
 .main-home {
@@ -356,7 +364,7 @@ a{
     grid-gap: 0.5rem;
     margin-bottom: 2rem;
 }
-.rectangle-cards .rect-card {
+.rect-card {
     height: 48px;
     display: flex;
     align-items: center;
@@ -367,14 +375,14 @@ a{
     position: relative;
     cursor: pointer;
 }
-.rectangle-cards .rect-card img {
+.rect-card img {
     width: 3rem;
     height: 100%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     margin-right: 0.5rem;
 }
-.rectangle-cards .rect-card h5 {
+.rect-card h5 {
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1.5;
@@ -386,7 +394,7 @@ a{
     -webkit-line-clamp: 2; /* Limit to 2 lines */
     -webkit-box-orient: vertical;
 }
-.rectangle-cards .rect-card:hover {
+.rect-card:hover {
     background-color: rgba(128, 128, 128, 0.38);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -405,14 +413,13 @@ a{
     width: 2rem;
     height: 2rem;
 }
-
-
 /*Home-Content*/
 .home-content {
     flex: 1;
     margin-bottom: 2rem;
 }
-.home-navs {
+/*Home Titles*/
+.home-title {
     width: 100%;
     height: 30px;
     display: flex;
@@ -421,19 +428,24 @@ a{
     margin-bottom: 0.25rem;
     cursor: pointer;
 }
-.home-navs h2:hover,
-.home-navs h5:hover{
+.home-title h5 {
+    color: #B2B2B2;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.home-title h2:hover,
+.home-title h5:hover{
     text-decoration: underline;
 }
+/*Home Cards*/
 .home-cards {
     display: grid;
     grid-template-columns: repeat(5, minmax(100px, 1fr));
     gap: 0.5rem;
     margin-left: -0.75rem;
     margin-right: -0.75rem;
-
 }
-.home-cards .card .card-content h5 {
+.home-card-content h5 {
     font-size: 1rem;
     font-weight: 400;
     margin: 0.25rem;
@@ -442,7 +454,7 @@ a{
     white-space: nowrap;
     width: 100%;
 }
-.home-cards .card .card-content p {
+.home-card-content p {
     font-size: 0.75rem;
     margin: 0.25rem;
     color: rgba(255, 255, 255, 0.76);
@@ -455,46 +467,45 @@ a{
     -webkit-line-clamp: 2; /* Limit to 2 lines */
     -webkit-box-orient: vertical;
 }
-
-.MadeFor .card .play-button {
+/*Home-cards Play-button alignment*/
+.MadeFor .play-button {
     top: 56%;
     left: 78%;
     width: 3rem;
     height: 3rem;
 }
-.JumpBack .card .play-button {
+.JumpBack .play-button {
     top: 56.5%;
     left:79%;
     width: 3rem;
     height: 3rem;
 }
-.RecentlyPlayed .card .play-button {
+.RecentlyPlayed  .play-button {
     top: 60.5%;
     left:79%;
     width: 3rem;
     height: 3rem;
 }
-.Throwback .card .play-button {
+.Throwback .play-button {
     top: 56.5%;
     left:78.5%;
     width: 3rem;
     height: 3rem;
 }
-.Episodes .card .play-button {
+.Episodes .play-button {
     top: 60%;
     left:79%;
     width: 3rem;
     height: 3rem;
 }
-.RecentListening .card .play-button {
+.RecentListening .play-button {
     top: 57%;
     left:79%;
     width: 3rem;
     height: 3rem;
 }
 
-
-/*Footer-Content*/
+/*3.Footer-Content*/
 .footer {
     padding: 40px 0 0 0 ;
     flex: 1;
@@ -505,29 +516,30 @@ a{
     display: flex;
     flex-direction: column;
 }
-.footer-content .top-section {
+/*Footer-Top-Section*/
+.footer-top-sec {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     margin-top: 1.5rem;
     border-bottom: 0.01rem solid rgba(128, 128, 128, 0.35);
 }
-.footer-content .top-section .grid {
+.ccu-grid {
     margin: 0 1.5rem 2rem 0;
     width: 100%;
 }
-.footer-content .top-section .grid p {
+.ccu-grid p {
     font-weight: 500;
     font-size: 1rem;
     margin: 0;
 }
-.footer-content .top-section .grid ul {
+.ftr-ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 0;
 }
-.footer-content .top-section .grid ul li {
+.ftr-ul li {
     color: #A7A7A7;
     padding-bottom: 0.75rem;
     font-weight: 400;
@@ -535,16 +547,16 @@ a{
     cursor: pointer;
     width: 90%;
 }
-.footer-content .top-section .grid ul li:hover {
+.ftr-ul li:hover {
     color: #fff;
     text-decoration: underline;
 }
-.footer-content .top-section .Social-Link {
+.Social-Link {
     margin: 0 0 2.5rem 0;
     display: flex;
     align-content: center;
 }
-.footer-content .top-section .Social-Link button {
+.Social-Link button {
     background-color: #292929;
     color: white;
     border-radius: 100%;
@@ -558,10 +570,11 @@ a{
     margin-right: 1rem;
     padding: 16px;
 }
-.footer-content .top-section .Social-Link button:hover {
+.Social-Link button:hover {
     background-color: rgb(101, 99, 99);
 }
-.footer-content .bottom-section {
+/*Footer-Bottom-Section*/
+.footer-btm-sec {
     margin-top: 2rem;
     padding-top: 1rem;
     display: flex;
@@ -570,21 +583,25 @@ a{
     align-items: center;
     flex-wrap: wrap;
 }
-.footer-content .bottom-section .bottom-links {
+.footer-btm-sec p {
+    color: #A7A7A7;
+    font-size: 0.75rem;
+}
+.bottom-links {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
-.footer-content .bottom-section .bottom-links a {
+.bottom-links a {
     color: #A7A7A7;
     font-size: 0.8rem;
-    margin: 0.5rem;
+    margin: 0.5rem 1rem 0.5rem 0;
 }
-.footer-content .bottom-section p {
-    color: #A7A7A7;
-    font-size: 0.75rem;
+.bottom-links a:hover {
+    color: #fff;
 }
 
+/*5.Main-Content Scrollbar*/
 .main-content::-webkit-scrollbar {
     width: 0.5rem; /* width of the scrollbar */
     background-color: rgba(18, 18, 18, 0.50); /* color of the scrollbar track */
@@ -599,3 +616,51 @@ a{
 .main-content::-webkit-scrollbar-thumb:active {
     background-color: rgba(255, 255, 255, 0.68) /* active opacity */
 }
+
+
+/*Music-Player*/
+.music-player {
+    display: flex;
+    justify-content: space-between;
+}
+.album {
+    width: 25%;
+    background-color: #ffa511;
+}
+.controls {
+    width: 25%;
+    background-color: #e87fae;
+}
+
+.player {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+.player-control-icon {
+    height: 1rem;
+    padding: 1rem;
+}
+.player-control-icon:nth-child(3) {
+    height: 2rem;
+}
+.playback-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1rem;
+    font-size: 0.75rem;
+}
+.progress-bar-icon {
+    width: 80%;
+    height: 0.2rem;
+    margin: 0 1rem 0 1rem;
+}
+
