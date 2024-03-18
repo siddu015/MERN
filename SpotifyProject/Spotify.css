@@ -660,6 +660,14 @@ a {
     color: #A7A7A7;
     padding-right: 1.5rem;
 }
+.song-title a:hover{
+    text-decoration: underline;
+}
+.singer-name a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
 
 
 
@@ -736,7 +744,6 @@ a {
 
 .control-icon {
     padding-right: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
 }
 .controls .a {
     padding-left: 2rem;
@@ -748,39 +755,43 @@ a {
     width: 1.5rem;
 }
 .controls .c {
-    height: 1.25rem;
-    width: 1.2rem;
+    font-size: 1.05rem;
+    opacity: 0.5;
 }
 .controls .d {
-     height: 0.9rem;
-     width: 1rem;
+    height: 0.9rem;
+    width: 1rem;
     padding-right: 1rem;
+    opacity: 0.6;
 
 }
 .controls .e {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding-right: 0.25rem;
+    opacity: 0.5;
   }
 .controls .f {
     font-size: 0.8rem;
     padding-left: 1rem;
+    opacity: 0.5;
   }
 .controls .g {
     font-size: 0.8rem;
     padding-right: 0.75rem;
+    opacity: 0.5;
   }
 .control-icon:hover {
-    transform: scale(1.1);
     opacity: 1;
+    filter: brightness(250%);
 }
 
 .sound-bar-icon {
-    width: 30%;
+    width: 23%;
     background-color: transparent;
     appearance: none;
 }
 .sound-bar-icon::-webkit-slider-runnable-track {
-    background: #dddddd;
+    background: #ffffff;
     border-radius: 100px;
     height: 0.2rem;
 }
