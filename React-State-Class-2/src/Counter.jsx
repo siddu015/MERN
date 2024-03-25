@@ -9,7 +9,7 @@ export default function Counter() {
 
     useEffect(() => {
         console.log("This is the side effect");
-    }, []); // Empty dependency array means this effect runs once when the component mounts
+    }, [count]); // Empty dependency array means this effect runs once when the component mounts
 
     return (
         <div>
