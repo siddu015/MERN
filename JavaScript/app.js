@@ -1,11 +1,7 @@
-const calls = setInterval(() => {
-    console.log("Hello world")
-}, 2000)
+let inp = document.querySelector("input")
 
+inp.addEventListener("change", function () {
+    let h1 = document.querySelector("h1")
 
-setTimeout( () => {
-    clearInterval(calls)
-    console.log("Cleared")
-},10010)
-
-
+    h1.innerText = inp.value;
+})
