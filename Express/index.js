@@ -22,4 +22,13 @@ app.get("/Orange",(req, res) =>  {
 app.get("*",(req, res) =>  {
     res.send("There is no Response")
 })
-
+app.get("/ig/:username",(req, res) => {
+    let { username } = req.params;
+    res.send ('This account belongs to @${username}');
+});
+app.get("/search", (req, res) => {
+    let { q } = req.query;
+    if (!q)
+        res. send ("No search query");
+    res.send(`These are the results for: ${ q }*`);
+});
