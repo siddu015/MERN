@@ -50,7 +50,7 @@ function levelUp() {
 function checkAns(idx) {
     if (userSeq[idx] === gameSeq[idx]) {
         if(userSeq.length === gameSeq.length)
-           setTimeout(levelUp, 1000);
+            setTimeout(levelUp, 1000);
     } else {
         h2.innerText = `Game Over! Your score was ${level}\n Press any key to start.`
 
