@@ -1,0 +1,82 @@
+/* Post styling */
+.post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post:hover {
+    transform: scale(1.02);
+}
+
+.user {
+    color: #555;
+    font-size: 18px;
+    margin: 0;
+}
+
+.content {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Detail Post button styling */
+.detailPost {
+    margin-top: 10px;
+}
+
+.detailPost a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.detailPost a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+/* New Post button styling */
+.newPost {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #007BFF;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.newPost a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.newPost:hover {
+    background-color: #0056b3;
+}
