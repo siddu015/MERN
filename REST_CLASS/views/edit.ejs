@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="form-container">
+    <h1>Edit Your Post</h1>
+    <p><strong>Post ID:</strong> <%= post.id %></p>
+    <p><strong>Username:</strong> @<%= post.username %></p>
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea id="content" name="content" rows="10" placeholder="Update your content" required><%= post.content %></textarea>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>

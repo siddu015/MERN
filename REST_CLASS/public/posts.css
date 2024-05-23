@@ -27,12 +27,14 @@
     margin: 10px 0;
 }
 
-/* Detail Post button styling */
-.detailPost {
+/* Post button styling */
+.post-btn {
+    display: inline-block;
+    margin-right: 10px;
     margin-top: 10px;
 }
 
-.detailPost a {
+.post-btn a {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
@@ -44,17 +46,32 @@
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.detailPost a:hover {
+.post-btn a:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
 
+/* Delete button styling */
+.delete-post {
+    display: inline;
+}
 
+.delete-post button {
+    padding: 10px 20px;
+    background-color: #FF4136;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    margin-top: 10px;
+}
 
-
-
-
-
+.delete-post button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
 
 /* New Post button styling */
 .newPost {
