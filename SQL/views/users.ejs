@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container" id="users-page">
+    <h1>All Users</h1>
+    <div class="users-table">
+        <h3>User Name</h3>  <h3>Email</h3>
+        <ul>
+            <% users.forEach(user => { %>
+                <li><span><%= user.username %></span> <span><%= user.email %></span></li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <a href="/"><button>Back to Home</button></a>
+</div>
+</body>
+</html>
