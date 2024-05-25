@@ -9,15 +9,38 @@
 <body>
 <div class="container" id="users-page">
     <h1>All Users</h1>
-    <div class="users-table">
-        <h3>User Name</h3>  <h3>Email</h3>
-        <ul>
-            <% users.forEach(user => { %>
-                <li><span><%= user.username %></span> <span><%= user.email %></span></li>
-            <% }) %>
-        </ul>
-    </div>
-
+    <form method="GET" action="/users/new">
+        <button type="submit">Add New User</button>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td>
+                    <form method="GET" action="/users/<%= user.id %>/edit" style="display:inline;">
+                        <button type="submit">Edit Username</button>
+                    </form>
+                    <br>
+                    <br>
+                    <form method="GET" action="/users/<%= user.id %>/delete" style="display:inline;">
+                        <button type="submit">Delete User</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
     <a href="/"><button>Back to Home</button></a>
 </div>
 </body>
