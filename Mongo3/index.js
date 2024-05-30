@@ -83,3 +83,16 @@ app.patch("/chats/:id", async (req, res) => {
 
     res.redirect("/chats")
 })
+
+app.delete("/chats/:id", async (req, res) => {
+    let { id } = req.params
+
+    let deletedChat = Chat
+        .findByIdAndDelete(id)
+        .then((data) => console.log("Successfully Deleted"))
+        .catch((err) => console.log(err));
+
+    console.log(deletedChat)
+
+    res.redirect("/chats")
+})

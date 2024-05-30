@@ -8,10 +8,8 @@ uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
-
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
-
 app.use(express.static(path.join(__dirname, "public")))
 
 posts = [
