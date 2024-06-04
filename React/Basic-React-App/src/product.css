@@ -1,0 +1,45 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to new line */
+    gap: 16px; /* Space between items */
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product h3 {
+    margin: 0 0 8px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.product p {
+    margin: 8px 0;  /* Increased margin for more space */
+    font-size: 1em;
+    color: #666;
+}
+
+.prices {
+    background-color: yellow;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;  /* Added margin to separate from the other content */
+}
+
+.oldPrice {
+    text-decoration: line-through;  /* Strikethrough for old price */
+    color: #999;
+}
+
+.newPrice {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e60000;
+}

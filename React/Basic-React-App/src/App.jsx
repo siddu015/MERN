@@ -1,13 +1,13 @@
 import './App.css'
-import * as path from "node:path";
-import Product from "./ProductTab.jsx";
 import ProductTab from "./ProductTab.jsx";
+import Head from "./Head.jsx";
 
 
 
 function App() {
   return (
       <>
+        <Head/>
         <ProductTab/>
       </>
   );
