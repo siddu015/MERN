@@ -8,8 +8,8 @@ function Product({title, d1, d2, oldPrice, newPrice}) {
             <p>{d1}</p>
             <p>{d2}</p>
             <div className="prices">
-                <p className="oldprice">{oldPrice}</p>
-                <p className="newPrice">{newPrice}</p>
+                <p className="oldprice">₹{oldPrice}</p>
+                <p className="newPrice">₹{newPrice}</p>
             </div>
         </div>
     );
