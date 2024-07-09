@@ -1,3 +1,4 @@
+//todolist
 import React, { useState } from "react";
 
 export default function TodoList() {
@@ -84,8 +85,8 @@ export default function TodoList() {
 
             <ul>
                 {todos.map((todo) => (
-                    <li key={todo.id} style={{ textDecoration: todo.done ? "line-through" : "none" }}>
-                        <span>{todo.task}</span>
+                    <li key={todo.id}>
+                        <span style={{ textDecoration: todo.done ? "line-through" : "none" }}>{todo.task}</span>
                         &nbsp;
                         &nbsp;
                         <button onClick={() => deleteTask(todo.id)}>Delete</button>
