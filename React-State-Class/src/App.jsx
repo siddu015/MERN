@@ -5,9 +5,6 @@ function App() {
     return (
         <>
             <TodoList />
-            <TodoList />
-            <TodoList />
-            <TodoList />
         </>
     );
 }
