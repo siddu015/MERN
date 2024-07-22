@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Lottery n={3} winningSum={15}/>
-      {/*  <Form/>*/}
+        <Form/>
       {/*  <CommentsForm/>*/}
       {/*  <Counter/>*/}
         <Joker/>
