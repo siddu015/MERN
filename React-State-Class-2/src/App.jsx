@@ -12,7 +12,7 @@ function App() {
     <>
       <Lottery n={3} winningSum={15}/>
         <Form/>
-      {/*  <CommentsForm/>*/}
+        <CommentsForm/>
       {/*  <Counter/>*/}
         <Joker/>
     </>
