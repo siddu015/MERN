@@ -1,16 +1,12 @@
-import './App.css'
-import SocialLinks from "./socialLinks.jsx"
-import Card from "./card.jsx"
+// src/App.jsx
+import React from "react";
+import Form from "./Component/Form.jsx";
 
+const App = () => (
+    <div>
+        <h1>Contact Us</h1>
+        <Form />
+    </div>
+);
 
-
-function App() {
-  return (
-      <>
-        <SocialLinks/>
-        <Card/>
-      </>
-  );
-}
-
-export default App
+export default App;
