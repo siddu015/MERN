@@ -10,10 +10,10 @@ import Joker from "./Joker.jsx";
 function App() {
   return (
     <>
-      <Lottery n={3} winningSum={15}/>
-        <Form/>
-        <CommentsForm/>
-        <Counter/>
+      {/*<Lottery n={3} winningSum={15}/>*/}
+      {/*  <Form/>*/}
+      {/*  <CommentsForm/>*/}
+      {/*  <Counter/>*/}
         <Joker/>
     </>
   )
