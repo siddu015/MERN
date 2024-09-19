@@ -1,6 +1,7 @@
 import './App.css'
 import ProductTab from "./ProductTab.jsx";
 import Head from "./Head.jsx";
+import Button from "./test.jsx"
 
 
 
@@ -9,6 +10,7 @@ function App() {
       <>
         <Head/>
         <ProductTab/>
+          <Button/>
       </>
   );
 }
