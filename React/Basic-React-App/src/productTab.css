@@ -1,5 +1,0 @@
-.product-list {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping to new line */
-    gap: 16px; /* Space between items */
-}
