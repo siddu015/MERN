@@ -1,16 +1,14 @@
 import './App.css'
-import ProductTab from "./ProductTab.jsx";
-import Head from "./Head.jsx";
-import Button from "./test.jsx"
+import SocialLinks from "./socialLinks.jsx"
+import Card from "./card.jsx"
 
 
 
 function App() {
   return (
       <>
-        <Head/>
-        <ProductTab/>
-          <Button/>
+        <SocialLinks/>
+        <Card/>
       </>
   );
 }

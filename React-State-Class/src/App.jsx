@@ -4,6 +4,7 @@ import TodoList from "./TodoList.jsx";
 function App() {
     return (
         <>
+            <TodoList/>
         </>
     );
 }
